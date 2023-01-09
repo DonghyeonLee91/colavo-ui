@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ItemSelectionBody from "./components/ItemSelectionBody";
 import GlobalStyle from "./GlobalStyle";
 
 import CONFIG from "./libs/config/config";
 import useStore from "./libs/store/useStore";
 import CartPage from "./pages/CartPage";
+import ItemSelectionPage from "./pages/ItemSelectionPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ItemSelectionBody />,
+    element: <ItemSelectionPage />,
     errorElement: <p>Not Found!</p>,
   },
 ]);
