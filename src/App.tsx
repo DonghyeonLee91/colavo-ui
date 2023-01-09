@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import GlobalStyle from "./GlobalStyle";
 
+import GlobalStyle from "./GlobalStyle";
 import CONFIG from "./libs/config/config";
 import useStore from "./libs/store/useStore";
 import DiscountSelectionPage from "./pages/DiscountSelectionPage";

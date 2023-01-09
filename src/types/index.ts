@@ -14,8 +14,8 @@ export interface HeaderProps {
   title: string;
 }
 export interface State {
-  items: any;
-  discounts: any;
+  items: { [key: string]: any };
+  discounts: { [key: string]: any };
   totalPrice: number;
   selectionItems: string[];
   selectionDiscounts: string[];
@@ -27,6 +27,7 @@ export interface State {
   setSelectionItems: (payload: string[]) => void;
   setSelectionDiscounts: (payload: string[]) => void;
   setDeleteItem: (id: string) => void;
+  setDeleteDiscount: (id: string) => void;
 }
 export interface ButtonProps {
   name: string;
@@ -44,4 +45,11 @@ export interface CartItemProps extends CartProps {
 
 export interface CartDiscountProps extends CartProps {
   rate: number;
+}
+
+export interface ModalProps {
+  name: string;
+  id: string;
+  handleDiscountItem: (id: string) => void;
+  closeModal: () => void;
 }

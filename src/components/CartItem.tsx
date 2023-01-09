@@ -18,12 +18,11 @@ function CartItem({ id, name, price, count }: CartItemProps) {
   const handlePlus = () => {
     setQuantity(quantity + 1);
   };
+  const handleDelete = () => setDeleteItem(id);
 
   useEffect(() => {
     SetItemsCounts(id, quantity);
   }, [quantity, id, SetItemsCounts]);
-
-  const handleDelete = () => setDeleteItem(id);
 
   return (
     <li>

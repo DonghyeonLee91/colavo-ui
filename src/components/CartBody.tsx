@@ -12,7 +12,6 @@ function CartBody() {
   const selectionItems = useStore((state) => state.selectionItems);
   const itemsCounts = useStore((state) => state.itemsCounts);
   const selectionDiscounts = useStore((state) => state.selectionDiscounts);
-  console.log(selectionDiscounts);
   const setTotalPrice = useStore((state) => state.setTotalPrice);
   const getTotalPrice =
     selectionItems &&
