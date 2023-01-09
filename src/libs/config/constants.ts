@@ -14,3 +14,8 @@ export const TITLE = {
   ITEM: "시술메뉴",
   DISCOUNT: "할인",
 };
+
+export const CODE = {
+  USD: "USD",
+  KRW: "KRW",
+};

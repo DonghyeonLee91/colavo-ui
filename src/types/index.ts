@@ -22,11 +22,13 @@ export interface State {
   selectionDiscounts: string[];
   itemsCounts: { [key: string]: number };
   discountItemsPriceList: { [key: string]: any };
-  currency_code: string;
+  currencyCode: string;
+  exchangeRate: number;
   setDiscountItemsPriceList: (id: string, price: number) => void;
   setItemsCounts: (id: string, count: number) => void;
   setTotalPrice: (payload: number) => void;
   getData: (url: string | undefined) => void;
+  getExchangeRate: (url: string | undefined) => void;
   setSelectionItems: (payload: string[]) => void;
   setSelectionDiscounts: (payload: string[]) => void;
   setDeleteItem: (id: string) => void;

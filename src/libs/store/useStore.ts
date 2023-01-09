@@ -10,7 +10,8 @@ const useStore = create<State>((set) => ({
   totalDiscount: 0,
   itemsCounts: {},
   discountItemsPriceList: {},
-  currency_code: "",
+  exchangeRate: 0,
+  currencyCode: "",
   getData: async (url) => {
     if (typeof url === "string") {
       const response = await fetch(url);
@@ -18,7 +19,17 @@ const useStore = create<State>((set) => ({
       set(() => ({
         items,
         discounts,
-        currency_code,
+        currencyCode: currency_code,
+      }));
+    }
+  },
+  getExchangeRate: async (url) => {
+    if (typeof url === "string") {
+      const response = await fetch(url);
+      const data = await response.json();
+      const { basePrice } = data[0];
+      set(() => ({
+        exchangeRate: basePrice,
       }));
     }
   },

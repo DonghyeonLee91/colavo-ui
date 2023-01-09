@@ -9,7 +9,7 @@ function SelectionHeader({ title }: HeaderProps) {
   return (
     <HeaderContainer>
       <ExplainIcon />
-      <h1>시술메뉴</h1>
+      <h1>{title}</h1>
     </HeaderContainer>
   );
 }
