@@ -7,10 +7,15 @@ export interface SelectionProps {
 
 export interface SelectionFooterProps {
   onSubmit: () => void;
+  description: string;
+}
+
+export interface HeaderProps {
+  title: string;
 }
 export interface State {
   items: any;
-  discounts: { [key: string]: string | number };
+  discounts: any;
   totalPrice: number;
   selectionItems: string[];
   selectionDiscounts: string[];
@@ -28,9 +33,15 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-export interface CartItemProps {
+interface CartProps {
   id: string;
   name: string;
+}
+export interface CartItemProps extends CartProps {
   price: number;
   count: number;
+}
+
+export interface CartDiscountProps extends CartProps {
+  rate: number;
 }

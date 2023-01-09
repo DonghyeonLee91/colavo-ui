@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import useStore from "../libs/store/useStore";
 import { CheckBox } from "../types";
+import { DESCRIPTION, TITLE } from "../libs/config/constants";
 import SelectionBody from "../components/SelectionBody";
 import SelectionFooter from "../components/SelectionFooter";
 import SelectionHeader from "../components/SelectionHeader";
@@ -37,9 +38,12 @@ function DiscountSelectionPage() {
 
   return (
     <DiscountSelectionContainer>
-      <SelectionHeader />
+      <SelectionHeader title={TITLE.DISCOUNT} />
       <SelectionBody data={discounts} onChange={handleChange} />
-      <SelectionFooter onSubmit={handleSubmit} />
+      <SelectionFooter
+        onSubmit={handleSubmit}
+        description={DESCRIPTION.DISCOUNT}
+      />
     </DiscountSelectionContainer>
   );
 }

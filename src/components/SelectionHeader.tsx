@@ -1,8 +1,11 @@
 import React from "react";
-import styled from "styled-components";
-import { FaRegWindowClose } from "react-icons/fa";
 
-function SelectionHeader() {
+import { FaRegWindowClose } from "react-icons/fa";
+import styled from "styled-components";
+
+import { HeaderProps } from "../types";
+
+function SelectionHeader({ title }: HeaderProps) {
   return (
     <HeaderContainer>
       <ExplainIcon />

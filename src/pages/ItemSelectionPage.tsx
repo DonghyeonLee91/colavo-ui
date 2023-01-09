@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import useStore from "../libs/store/useStore";
 import { CheckBox } from "../types";
+import { DESCRIPTION, TITLE } from "../libs/config/constants";
 import SelectionBody from "../components/SelectionBody";
 import SelectionFooter from "../components/SelectionFooter";
 import SelectionHeader from "../components/SelectionHeader";
@@ -35,9 +36,9 @@ function ItemSelectionPage() {
 
   return (
     <ItemSelectionContainer>
-      <SelectionHeader />
+      <SelectionHeader title={TITLE.ITEM} />
       <SelectionBody data={items} onChange={handleChange} />
-      <SelectionFooter onSubmit={handleSubmit} />
+      <SelectionFooter onSubmit={handleSubmit} description={DESCRIPTION.ITEM} />
     </ItemSelectionContainer>
   );
 }

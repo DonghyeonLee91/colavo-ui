@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 
+import styled from "styled-components";
 import { FaRegWindowClose } from "react-icons/fa";
 
 import HeaderButton from "./HeaderButton";

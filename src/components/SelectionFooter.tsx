@@ -6,10 +6,10 @@ import FooterButton from "./FooterButton";
 import { SelectionFooterProps } from "../types";
 import { BUTTON_NAME } from "../libs/config/constants";
 
-function SelectionFooter({ onSubmit }: SelectionFooterProps) {
+function SelectionFooter({ onSubmit, description }: SelectionFooterProps) {
   return (
     <FooterContainer>
-      <h3>서비스를 선택하세요(여러개 선택 가능)</h3>
+      <h3>{description}</h3>
       <FooterButton onClick={onSubmit} name={BUTTON_NAME.SUBMIT} />
     </FooterContainer>
   );
