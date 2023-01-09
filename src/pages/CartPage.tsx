@@ -2,6 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
+import { THEME } from "../libs/config/constants";
 import CartBody from "../components/CartBody";
 import CartHeader from "../components/CartHeader";
 import CartFooter from "../components/CartFooter";
@@ -23,6 +24,8 @@ const CartContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+  background-color: ${THEME.BACKGROUND};
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.6);
 `;
 
 export default CartPage;

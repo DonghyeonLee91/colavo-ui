@@ -62,6 +62,7 @@ const BodyContainer = styled.div`
   flex-direction: column;
   width: 25%;
   height: 50vh;
+  overflow: auto;
   background-color: ${THEME.WHITE};
 `;
 

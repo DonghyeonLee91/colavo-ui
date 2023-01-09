@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import useStore from "../libs/store/useStore";
 import { CartDiscountProps } from "../types";
+import { THEME } from "../libs/config/constants";
 import DiscountModal from "./DiscountModal";
 
 function CartDiscount({ id, name, rate }: CartDiscountProps) {
@@ -28,9 +29,11 @@ function CartDiscount({ id, name, rate }: CartDiscountProps) {
 
   return (
     <DiscountContainer>
-      <h3>{name}</h3>
-      <p>{discountPrice}원</p>
-      <p onClick={() => setIsOpen(true)}>수정</p>
+      <div>
+        <h3>{name}</h3>
+        <p>{discountPrice}원</p>
+      </div>
+      <Controller onClick={() => setIsOpen(true)}>수정</Controller>
       {isOpen && (
         <DiscountModal
           name={name}
@@ -43,6 +46,22 @@ function CartDiscount({ id, name, rate }: CartDiscountProps) {
   );
 }
 
-const DiscountContainer = styled.div``;
+const DiscountContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  background-color: ${THEME.WHITE};
+  h3,
+  p {
+    background-color: ${THEME.WHITE};
+  }
+`;
+
+const Controller = styled.span`
+  margin-right: 0.2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+`;
 
 export default CartDiscount;

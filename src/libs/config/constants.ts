@@ -26,4 +26,6 @@ export const THEME = {
   WHITE: "#ffffff",
   LPINK: "rgb(253,241,245)",
   LGRAY: "rgb(247,247,247)",
+  BACKGROUND: "rgba(168, 163, 163, 0.2)",
+  BLACK: "#000000",
 };

@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import useStore from "../libs/store/useStore";
 import { CheckBox } from "../types";
-import { DESCRIPTION, TITLE } from "../libs/config/constants";
+import { DESCRIPTION, TITLE, THEME } from "../libs/config/constants";
 import SelectionBody from "../components/SelectionBody";
 import SelectionFooter from "../components/SelectionFooter";
 import SelectionHeader from "../components/SelectionHeader";
@@ -50,6 +50,8 @@ const ItemSelectionContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+  background-color: ${THEME.BACKGROUND};
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.6);
 `;
 
 export default ItemSelectionPage;

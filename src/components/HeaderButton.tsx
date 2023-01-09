@@ -28,7 +28,7 @@ function HeaderButton({ name }: ButtonProps) {
 }
 
 const ButtonContainer = styled.button`
-  padding: 1rem 3.5rem;
+  padding: 1rem 2.5rem;
   border: none;
   border-radius: 10px;
   font-size: 0.9rem;

@@ -9,7 +9,11 @@ function SelectionBody({ data, onChange }: SelectionProps) {
     <BodyContainer>
       {Object.entries(data).map((data: any) => {
         return (
-          <li key={data[0]}>
+          <ListContainer key={data[0]}>
+            <label htmlFor={data[0]}>
+              {data[1].name}
+              {data[1].rate && <p> {Math.floor(data[1].rate * 100)}%</p>}
+            </label>
             <input
               type="checkbox"
               id={data[0]}
@@ -17,11 +21,7 @@ function SelectionBody({ data, onChange }: SelectionProps) {
               onChange={(e) => onChange(e.target.checked, e.target.id)}
               value={data[0]}
             />
-            <label htmlFor={data[0]}>
-              {data[1].name}
-              {data[1].rate && <p> {Math.floor(data[1].rate * 100)}%</p>}
-            </label>
-          </li>
+          </ListContainer>
         );
       })}
     </BodyContainer>
@@ -33,7 +33,25 @@ const BodyContainer = styled.ul`
   flex-direction: column;
   width: 25%;
   height: 50vh;
+  overflow: auto;
   background-color: ${THEME.WHITE};
+`;
+
+const ListContainer = styled.li`
+  margin: 2px 0;
+  background-color: ${THEME.WHITE};
+  input {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  label {
+    background-color: ${THEME.WHITE};
+    font-size: 1.2rem;
+  }
+  p {
+    background-color: ${THEME.WHITE};
+  }
 `;
 
 export default SelectionBody;

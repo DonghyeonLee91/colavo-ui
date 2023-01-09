@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 import useStore from "../libs/store/useStore";
+import { THEME } from "../libs/config/constants";
 import { ModalProps } from "../types";
 
 function DiscountModal({
@@ -35,28 +36,28 @@ function DiscountModal({
 
   return (
     <ModalContainer>
-      <h1>{name}</h1>
+      <Title>{name}</Title>
       {selectionItems && (
-        <div>
+        <SelectionContainer>
           {selectionItems.map((item) => (
-            <div key={item}>
+            <SelectionItemWrapper key={item}>
+              <label htmlFor={item}>
+                {items[item].name} * {itemsCounts[item]}
+                <br /> {Math.floor(items[item].price * itemsCounts[item])}원
+              </label>
               <input
                 type="checkbox"
                 name="items"
                 id={item}
                 onChange={(e) => handleCheck(e.target)}
               />
-              <label htmlFor={item}>
-                {items[item].name} * {itemsCounts[item]}
-                <br /> {Math.floor(items[item].price * itemsCounts[item])}원
-              </label>
-            </div>
+            </SelectionItemWrapper>
           ))}
-        </div>
+        </SelectionContainer>
       )}
       <ButtonContainer>
-        <button onClick={handleDelete}>삭제</button>
-        <button onClick={closeModal}>확인</button>
+        <ModalButton onClick={handleDelete}>삭제</ModalButton>
+        <ModalButton onClick={closeModal}>확인</ModalButton>
       </ButtonContainer>
     </ModalContainer>
   );
@@ -68,17 +69,52 @@ const ModalContainer = styled.div`
   left: 43%;
   width: 15vw;
   height: 30vh;
-  margin: 0 auto;
-  border: 1px solid #000000;
-  background-color: rgba(168, 163, 163, 0.5);
+  border: 1px solid ${THEME.BLACK};
+  border-radius: 5px;
+  background-color: ${THEME.WHITE};
+  box-shadow: 0 17px 20px -18px rgba(0, 0, 0, 1);
+`;
+
+const Title = styled.h1`
+  font-size: 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid ${THEME.LINE};
+`;
+
+const SelectionContainer = styled.div`
+  margin: 2px 0;
+  height: 60%;
+  overflow: auto;
+`;
+
+const SelectionItemWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  input {
+    width: 20px;
+  }
+  input,
+  label {
+    cursor: pointer;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid ${THEME.LINE};
   width: 100%;
-  height: 10vh;
+  height: 27%;
+`;
+
+const ModalButton = styled.button`
+  width: 100%;
+  height: 100%;
+  border: 0.3px solid ${THEME.LINE};
+  border-bottom: 1px solid ${THEME.BLACK};
+  background-color: ${THEME.WHITE};
+  cursor: pointer;
 `;
 
 export default DiscountModal;
