@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import FooterButton from "./FooterButton";
 import { SelectionFooterProps } from "../types";
-import { BUTTON_NAME } from "../libs/config/constants";
+import { BUTTON_NAME, THEME } from "../libs/config/constants";
 
 function SelectionFooter({ onSubmit, description }: SelectionFooterProps) {
   return (
@@ -20,10 +20,10 @@ const FooterContainer = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 25%;
   height: 10vh;
   z-index: 1;
-  background-color: white;
+  background-color: ${THEME.WHITE};
 `;
 
 export default SelectionFooter;

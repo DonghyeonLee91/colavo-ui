@@ -1,9 +1,12 @@
 import React from "react";
+import styled from "styled-components";
+
 import { SelectionProps } from "../types";
+import { THEME } from "../libs/config/constants";
 
 function SelectionBody({ data, onChange }: SelectionProps) {
   return (
-    <ul>
+    <BodyContainer>
       {Object.entries(data).map((data: any) => {
         return (
           <li key={data[0]}>
@@ -21,8 +24,16 @@ function SelectionBody({ data, onChange }: SelectionProps) {
           </li>
         );
       })}
-    </ul>
+    </BodyContainer>
   );
 }
+
+const BodyContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 50vh;
+  background-color: ${THEME.WHITE};
+`;
 
 export default SelectionBody;

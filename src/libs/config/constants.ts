@@ -19,3 +19,11 @@ export const CODE = {
   USD: "USD",
   KRW: "KRW",
 };
+
+export const THEME = {
+  FOOTER_BUTTON: "rgb(102, 66, 255)",
+  LINE: "rgb(235,235,235)",
+  WHITE: "#ffffff",
+  LPINK: "rgb(253,241,245)",
+  LGRAY: "rgb(247,247,247)",
+};

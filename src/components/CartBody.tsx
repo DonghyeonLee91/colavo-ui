@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import useStore from "../libs/store/useStore";
+import { THEME } from "../libs/config/constants";
 import CartDiscount from "./CartDiscount";
 import CartItem from "./CartItem";
 
@@ -13,20 +14,11 @@ function CartBody() {
   const itemsCounts = useStore((state) => state.itemsCounts);
   const selectionDiscounts = useStore((state) => state.selectionDiscounts);
   const setTotalPrice = useStore((state) => state.setTotalPrice);
-  const discountItemsPriceList = useStore(
-    (state) => state.discountItemsPriceList
-  );
   const getTotalPrice =
     selectionItems.length &&
     selectionItems.reduce(
       (prev, current) =>
         prev + parseInt(items[current].price) * itemsCounts[current],
-      0
-    );
-  const getTotalDiscountPrice =
-    Object.keys(discountItemsPriceList).length &&
-    Object.keys(discountItemsPriceList).reduce(
-      (prev, current) => prev + parseInt(discountItemsPriceList[current]),
       0
     );
 
@@ -68,9 +60,9 @@ function CartBody() {
 const BodyContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 30%;
-  height: 50%;
-  background-color: white;
+  width: 25%;
+  height: 50vh;
+  background-color: ${THEME.WHITE};
 `;
 
 export default CartBody;

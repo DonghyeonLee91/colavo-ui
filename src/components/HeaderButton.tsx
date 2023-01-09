@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 
-import { BUTTON_NAME } from "../libs/config/constants";
+import { BUTTON_NAME, THEME } from "../libs/config/constants";
 import { ButtonProps } from "../types";
 
 function HeaderButton({ name }: ButtonProps) {
@@ -17,14 +17,22 @@ function HeaderButton({ name }: ButtonProps) {
     }
   };
 
-  return <ButtonContainer onClick={handleClick}>{name}</ButtonContainer>;
+  return (
+    <ButtonContainer
+      onClick={handleClick}
+      theme={name === BUTTON_NAME.ITEM ? THEME.LGRAY : THEME.LPINK}
+    >
+      {name}
+    </ButtonContainer>
+  );
 }
 
 const ButtonContainer = styled.button`
-  padding: 0.8rem 2.5rem;
+  padding: 1rem 3.5rem;
   border: none;
   border-radius: 10px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  background-color: ${({ theme }) => theme};
   cursor: pointer;
 `;
 
