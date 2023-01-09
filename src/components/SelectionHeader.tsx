@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaRegWindowClose } from "react-icons/fa";
 
-function ItemSelectionHeader() {
+function SelectionHeader() {
   return (
     <HeaderContainer>
       <ExplainIcon />
@@ -31,4 +31,4 @@ const ExplainIcon = styled(FaRegWindowClose)`
   cursor: pointer;
 `;
 
-export default ItemSelectionHeader;
+export default SelectionHeader;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import FooterButton from "./FooterButton";
 
-function ItemSelectionFooter() {
+function SelectionFooter() {
   return (
     <FooterContainer>
       <h3>서비스를 선택하세요(여러개 선택 가능)</h3>
@@ -22,4 +22,4 @@ const FooterContainer = styled.footer`
   background-color: white;
 `;
 
-export default ItemSelectionFooter;
+export default SelectionFooter;

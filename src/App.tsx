@@ -4,13 +4,12 @@ import GlobalStyle from "./GlobalStyle";
 
 import CONFIG from "./libs/config/config";
 import useStore from "./libs/store/useStore";
-import CartPage from "./pages/CartPage";
-import ItemSelectionPage from "./pages/ItemSelectionPage";
+import DiscountSelectionPage from "./pages/DiscountSelectionPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ItemSelectionPage />,
+    element: <DiscountSelectionPage />,
     errorElement: <p>Not Found!</p>,
   },
 ]);

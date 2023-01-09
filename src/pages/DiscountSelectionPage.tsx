@@ -7,8 +7,8 @@ import SelectionBody from "../components/SelectionBody";
 import SelectionFooter from "../components/SelectionFooter";
 import SelectionHeader from "../components/SelectionHeader";
 
-function ItemSelectionPage() {
-  const items = useStore((state) => state.items);
+function DiscountSelectionPage() {
+  const discounts = useStore((state) => state.discounts);
   const [checkedArr, setCheckedArr] = useState<CheckBox>([]);
   const handleChange = (checked: boolean, id: string) => {
     if (checked) {
@@ -19,15 +19,15 @@ function ItemSelectionPage() {
   };
 
   return (
-    <ItemSelectionContainer>
+    <DiscountSelectionContainer>
       <SelectionHeader />
-      <SelectionBody data={items} onChange={handleChange} />
+      <SelectionBody data={discounts} onChange={handleChange} />
       <SelectionFooter />
-    </ItemSelectionContainer>
+    </DiscountSelectionContainer>
   );
 }
 
-const ItemSelectionContainer = styled.div`
+const DiscountSelectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,4 +35,4 @@ const ItemSelectionContainer = styled.div`
   height: 100vh;
 `;
 
-export default ItemSelectionPage;
+export default DiscountSelectionPage;
