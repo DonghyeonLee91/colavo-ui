@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
@@ -12,21 +12,24 @@ function CartDiscount({ id, name, rate }: CartDiscountProps) {
   const totalPrice = useStore((state) => state.totalPrice);
   const items = useStore((state) => state.items);
   const itemsCounts = useStore((state) => state.itemsCounts);
+  const setDiscountItemsPriceList = useStore(
+    (state) => state.setDiscountItemsPriceList
+  );
+  const discountPrice = !!discountItem
+    ? Math.floor(items[discountItem].price * itemsCounts[discountItem] * rate)
+    : Math.floor(totalPrice * rate);
   const closeModal = () => {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    setDiscountItemsPriceList(id, discountPrice);
+  }, [id, setDiscountItemsPriceList, discountPrice]);
+
   return (
     <DiscountContainer>
       <h3>{name}</h3>
-      <p>
-        {!!discountItem
-          ? Math.floor(
-              items[discountItem].price * itemsCounts[discountItem] * rate
-            )
-          : Math.floor(totalPrice * rate)}
-        원
-      </p>
+      <p>{discountPrice}원</p>
       <p onClick={() => setIsOpen(true)}>수정</p>
       {isOpen && (
         <DiscountModal

@@ -13,17 +13,32 @@ function CartBody() {
   const itemsCounts = useStore((state) => state.itemsCounts);
   const selectionDiscounts = useStore((state) => state.selectionDiscounts);
   const setTotalPrice = useStore((state) => state.setTotalPrice);
+  const discountItemsPriceList = useStore(
+    (state) => state.discountItemsPriceList
+  );
   const getTotalPrice =
-    selectionItems &&
+    selectionItems.length &&
     selectionItems.reduce(
       (prev, current) =>
         prev + parseInt(items[current].price) * itemsCounts[current],
       0
     );
+  const getTotalDiscountPrice =
+    Object.keys(discountItemsPriceList).length &&
+    Object.keys(discountItemsPriceList).reduce(
+      (prev, current) => prev + parseInt(discountItemsPriceList[current]),
+      0
+    );
 
   useEffect(() => {
-    setTotalPrice(getTotalPrice);
-  }, [selectionItems, itemsCounts, getTotalPrice, setTotalPrice]);
+    setTotalPrice(getTotalPrice - getTotalDiscountPrice);
+  }, [
+    selectionItems,
+    itemsCounts,
+    getTotalPrice,
+    setTotalPrice,
+    getTotalDiscountPrice,
+  ]);
 
   return (
     <BodyContainer>

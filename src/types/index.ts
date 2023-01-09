@@ -17,10 +17,13 @@ export interface State {
   items: { [key: string]: any };
   discounts: { [key: string]: any };
   totalPrice: number;
+  totalDiscount: number;
   selectionItems: string[];
   selectionDiscounts: string[];
   itemsCounts: { [key: string]: number };
-  currency_code: string | null;
+  discountItemsPriceList: { [key: string]: any };
+  currency_code: string;
+  setDiscountItemsPriceList: (id: string, price: number) => void;
   setItemsCounts: (id: string, count: number) => void;
   setTotalPrice: (payload: number) => void;
   getData: (url: string | undefined) => void;

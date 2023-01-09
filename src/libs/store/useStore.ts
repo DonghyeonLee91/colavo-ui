@@ -7,8 +7,10 @@ const useStore = create<State>((set) => ({
   selectionItems: [],
   selectionDiscounts: [],
   totalPrice: 0,
+  totalDiscount: 0,
   itemsCounts: {},
-  currency_code: null,
+  discountItemsPriceList: {},
+  currency_code: "",
   getData: async (url) => {
     if (typeof url === "string") {
       const response = await fetch(url);
@@ -37,6 +39,13 @@ const useStore = create<State>((set) => ({
       itemsCounts: {
         ...state.itemsCounts,
         [id]: count,
+      },
+    })),
+  setDiscountItemsPriceList: (id, price) =>
+    set((state) => ({
+      discountItemsPriceList: {
+        ...state.discountItemsPriceList,
+        [id]: price,
       },
     })),
   setDeleteItem: (id) =>

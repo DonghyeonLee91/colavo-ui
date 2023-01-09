@@ -10,7 +10,6 @@ function CartItem({ id, name, price, count }: CartItemProps) {
   const [quantity, setQuantity] = useState(count);
   const SetItemsCounts = useStore((state) => state.setItemsCounts);
   const setDeleteItem = useStore((state) => state.setDeleteItem);
-
   const handleMinus = () => {
     if (quantity < 2) return;
     setQuantity(quantity - 1);
