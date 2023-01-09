@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+
 import { FaRegWindowClose } from "react-icons/fa";
 
 import HeaderButton from "./HeaderButton";
+import { BUTTON_NAME } from "../libs/config/constants";
 
 function CartHeader() {
   return (
@@ -10,8 +12,8 @@ function CartHeader() {
       <ExplainIcon />
       이동현
       <ButtonWrapper>
-        <HeaderButton name="시술" />
-        <HeaderButton name="할인" />
+        <HeaderButton name={BUTTON_NAME.ITEM} />
+        <HeaderButton name={BUTTON_NAME.DISCOUNT} />
       </ButtonWrapper>
     </HeaderContainer>
   );

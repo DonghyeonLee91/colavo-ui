@@ -4,12 +4,13 @@ import styled from "styled-components";
 
 import FooterButton from "./FooterButton";
 import { SelectionFooterProps } from "../types";
+import { BUTTON_NAME } from "../libs/config/constants";
 
 function SelectionFooter({ onSubmit }: SelectionFooterProps) {
   return (
     <FooterContainer>
       <h3>서비스를 선택하세요(여러개 선택 가능)</h3>
-      <FooterButton onClick={onSubmit} name="완료" />
+      <FooterButton onClick={onSubmit} name={BUTTON_NAME.SUBMIT} />
     </FooterContainer>
   );
 }

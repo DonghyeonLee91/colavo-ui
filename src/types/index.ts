@@ -18,7 +18,7 @@ export interface State {
   setSelectionItems: (payload: string[]) => void;
   setSelectionDiscounts: (payload: string[]) => void;
 }
-export interface ButtonProps {
+export type ButtonProps = {
   name: string;
   onClick?: () => void;
-}
+};

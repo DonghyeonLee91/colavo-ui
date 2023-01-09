@@ -1,11 +1,14 @@
 import React from "react";
+
 import styled from "styled-components";
+
+import { BUTTON_NAME } from "../libs/config/constants";
 import FooterButton from "./FooterButton";
 
 function CartFooter() {
   return (
     <FooterContainer>
-      <FooterButton name="다음" />
+      <FooterButton name={BUTTON_NAME.NEXT} />
     </FooterContainer>
   );
 }

@@ -6,12 +6,21 @@ import CONFIG from "./libs/config/config";
 import useStore from "./libs/store/useStore";
 import DiscountSelectionPage from "./pages/DiscountSelectionPage";
 import ItemSelectionPage from "./pages/ItemSelectionPage";
+import CartPage from "./pages/CartPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ItemSelectionPage />,
+    element: <CartPage />,
     errorElement: <p>Not Found!</p>,
+  },
+  {
+    path: "/items",
+    element: <ItemSelectionPage />,
+  },
+  {
+    path: "/discounts",
+    element: <DiscountSelectionPage />,
   },
 ]);
 

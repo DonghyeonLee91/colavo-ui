@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import styled from "styled-components";
 
 import useStore from "../libs/store/useStore";
@@ -9,6 +11,7 @@ import SelectionHeader from "../components/SelectionHeader";
 
 function ItemSelectionPage() {
   const items = useStore((state) => state.items);
+  const navigate = useNavigate();
   const setSelectionItems = useStore((state) => state.setSelectionItems);
   const [checkedArr, setCheckedArr] = useState<CheckBox>([]);
   const [isCompleted, setISCompleted] = useState(false);
@@ -26,6 +29,7 @@ function ItemSelectionPage() {
   useEffect(() => {
     if (isCompleted) {
       setSelectionItems(checkedArr);
+      navigate("/");
     }
   }, [isCompleted]);
 
