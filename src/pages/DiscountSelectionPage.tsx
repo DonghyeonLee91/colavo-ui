@@ -14,7 +14,9 @@ function DiscountSelectionPage() {
   const navigate = useNavigate();
   const [checkedArr, setCheckedArr] = useState<CheckBox>([]);
   const [isCompleted, setISCompleted] = useState(false);
-  const setSelectionItems = useStore((state) => state.setSelectionItems);
+  const setSelectionDiscounts = useStore(
+    (state) => state.setSelectionDiscounts
+  );
   const handleChange = (checked: boolean, id: string) => {
     if (checked) {
       setCheckedArr([...checkedArr, id]);
@@ -28,7 +30,7 @@ function DiscountSelectionPage() {
 
   useEffect(() => {
     if (isCompleted) {
-      setSelectionItems(checkedArr);
+      setSelectionDiscounts(checkedArr);
       navigate("/");
     }
   }, [isCompleted]);

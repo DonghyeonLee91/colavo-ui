@@ -1,15 +1,15 @@
 export type CheckBox = string[];
 
-export type SelectionProps = {
+export interface SelectionProps {
   data: { [key: string]: string | number };
   onChange: (checked: boolean, id: string) => void;
-};
+}
 
-export type SelectionFooterProps = {
+export interface SelectionFooterProps {
   onSubmit: () => void;
-};
+}
 export interface State {
-  items: { [key: string]: string | number };
+  items: any;
   discounts: { [key: string]: string | number };
   selectionItems: string[];
   selectionDiscounts: string[];
@@ -18,7 +18,7 @@ export interface State {
   setSelectionItems: (payload: string[]) => void;
   setSelectionDiscounts: (payload: string[]) => void;
 }
-export type ButtonProps = {
+export interface ButtonProps {
   name: string;
   onClick?: () => void;
-};
+}

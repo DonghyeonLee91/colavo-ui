@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <CartPage />,
-    errorElement: <p>Not Found!</p>,
+    // errorElement: <p>Not Found!</p>,
   },
   {
     path: "/items",
