@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HeaderButton from "./components/HeaderButton";
 import GlobalStyle from "./GlobalStyle";
 
 import CONFIG from "./libs/config/config";
 import useStore from "./libs/store/useStore";
+import CartPage from "./pages/CartPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HeaderButton name="안녕" />,
+    element: <CartPage />,
   },
 ]);
 

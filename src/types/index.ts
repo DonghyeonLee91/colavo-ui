@@ -4,3 +4,6 @@ export interface State {
   currency_code: string | null;
   getData: (url: string | undefined) => void;
 }
+export interface ButtonProps {
+  name: string;
+}

@@ -5,9 +5,9 @@ const useStore = create<State>((set) => ({
   items: {},
   discounts: {},
   currency_code: null,
-  getData: async (pond) => {
-    if (typeof pond === "string") {
-      const response = await fetch(pond);
+  getData: async (url) => {
+    if (typeof url === "string") {
+      const response = await fetch(url);
       const { items, discounts, currency_code } = await response.json();
       set(() => ({
         items,
