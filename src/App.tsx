@@ -1,7 +1,20 @@
-import React from "react";
+import { useEffect } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import CONFIG from "./libs/config/config";
+import useStore from "./libs/store/useStore";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <p>h1</p>,
+  },
+]);
 
 function App() {
-  return <div className="App">gg</div>;
+  const getData = useStore((state) => state.getData);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;
