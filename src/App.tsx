@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HeaderButton from "./components/HeaderButton";
 import GlobalStyle from "./GlobalStyle";
 
 import CONFIG from "./libs/config/config";
@@ -8,7 +9,7 @@ import useStore from "./libs/store/useStore";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <p>h1</p>,
+    element: <HeaderButton name="안녕" />,
   },
 ]);
 
