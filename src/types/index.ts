@@ -11,9 +11,13 @@ export interface SelectionFooterProps {
 export interface State {
   items: any;
   discounts: { [key: string]: string | number };
+  totalPrice: number;
   selectionItems: string[];
   selectionDiscounts: string[];
+  itemsCounts: { [key: string]: number };
   currency_code: string | null;
+  setItemsCounts: (id: string, count: number) => void;
+  setTotalPrice: (payload: number) => void;
   getData: (url: string | undefined) => void;
   setSelectionItems: (payload: string[]) => void;
   setSelectionDiscounts: (payload: string[]) => void;
@@ -21,4 +25,11 @@ export interface State {
 export interface ButtonProps {
   name: string;
   onClick?: () => void;
+}
+
+export interface CartItemProps {
+  id: string;
+  name: string;
+  price: number;
+  count: number;
 }

@@ -6,6 +6,8 @@ const useStore = create<State>((set) => ({
   discounts: {},
   selectionItems: [],
   selectionDiscounts: [],
+  totalPrice: 0,
+  itemsCounts: {},
   currency_code: null,
   getData: async (url) => {
     if (typeof url === "string") {
@@ -25,6 +27,17 @@ const useStore = create<State>((set) => ({
   setSelectionDiscounts: (payload) =>
     set(() => ({
       selectionDiscounts: payload,
+    })),
+  setTotalPrice: (payload) =>
+    set(() => ({
+      totalPrice: payload,
+    })),
+  setItemsCounts: (id, count) =>
+    set((state) => ({
+      itemsCounts: {
+        ...state.itemsCounts,
+        [id]: count,
+      },
     })),
 }));
 
