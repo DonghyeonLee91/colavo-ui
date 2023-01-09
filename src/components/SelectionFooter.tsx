@@ -21,8 +21,7 @@ const FooterContainer = styled.footer`
   align-items: center;
   justify-content: center;
   width: 25%;
-  height: 10vh;
-  z-index: 1;
+  height: 13vh;
   background-color: ${THEME.WHITE};
 `;
 

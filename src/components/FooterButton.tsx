@@ -11,6 +11,7 @@ function FooterButton({ name, onClick }: ButtonProps) {
 const ButtonContainer = styled.button`
   padding: 0.8rem 0.8rem;
   width: 100%;
+  height: 50%;
   border: none;
   border-radius: 7px;
   font-size: 1.3rem;

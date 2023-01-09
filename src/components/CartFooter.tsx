@@ -25,13 +25,29 @@ function CartFooter() {
       {(() => {
         switch (currencyCode) {
           case CODE.KRW:
-            return `합계: ${totalPrice - getTotalDiscountPrice}원`;
+            return (
+              <TotalPrice>
+                합계: <p>{totalPrice - getTotalDiscountPrice}원</p>
+              </TotalPrice>
+            );
           case CODE.USD:
-            return `Total: $${Math.floor(
-              (totalPrice - getTotalDiscountPrice) / exchangeRate
-            )}`;
+            return (
+              <TotalPrice>
+                Total:
+                <p>
+                  $
+                  {Math.floor(
+                    (totalPrice - getTotalDiscountPrice) / exchangeRate
+                  )}
+                </p>
+              </TotalPrice>
+            );
           default:
-            return `합계: ${totalPrice - getTotalDiscountPrice}원`;
+            return (
+              <TotalPrice>
+                합계: <p>{totalPrice - getTotalDiscountPrice}원</p>
+              </TotalPrice>
+            );
         }
       })()}
       <FooterButton name={BUTTON_NAME.NEXT} />
@@ -45,9 +61,21 @@ const FooterContainer = styled.footer`
   align-items: center;
   justify-content: center;
   width: 25%;
-  height: 10vh;
-  z-index: 1;
+  height: 14vh;
+  border-top: 1px solid ${THEME.LINE};
   background-color: ${THEME.WHITE};
+`;
+
+const TotalPrice = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50%;
+  font-size: 1rem;
+  p {
+    font-size: 1.5rem;
+  }
 `;
 
 export default CartFooter;

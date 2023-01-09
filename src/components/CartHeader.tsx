@@ -25,7 +25,7 @@ const HeaderContainer = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-bottom: 0.1px solid ${THEME.LINE};
+  border-bottom: 1px solid ${THEME.LINE};
   background-color: white;
   width: 25%;
   height: 14vh;
