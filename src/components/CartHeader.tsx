@@ -33,7 +33,7 @@ const HeaderContainer = styled.header`
 
 const ExplainIcon = styled(FaRegWindowClose)`
   position: absolute;
-  top: 30%;
+  top: 10%;
   left: 2%;
   font-size: 1.5rem;
   cursor: pointer;

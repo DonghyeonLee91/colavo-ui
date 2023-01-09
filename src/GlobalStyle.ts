@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font: 16px "GmarketSansMedium";
+    background-color: rgba(168, 163, 163, 0.2);
     list-style-type : none
   }
 `;

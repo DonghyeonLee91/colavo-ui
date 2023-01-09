@@ -68,6 +68,10 @@ const useStore = create<State>((set) => ({
       selectionDiscounts: state.selectionDiscounts.filter(
         (discount) => discount !== id
       ),
+      discountItemsPriceList: {
+        ...state.discountItemsPriceList,
+        [id]: 0,
+      },
     })),
 }));
 

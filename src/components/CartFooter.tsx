@@ -10,17 +10,28 @@ function CartFooter() {
   const totalPrice = useStore((state) => state.totalPrice);
   const exchangeRate = useStore((state) => state.exchangeRate);
   const currencyCode = useStore((state) => state.currencyCode);
-
+  const discountItemsPriceList = useStore(
+    (state) => state.discountItemsPriceList
+  );
+  const getTotalDiscountPrice =
+    Object.keys(discountItemsPriceList).length &&
+    Object.keys(discountItemsPriceList).reduce(
+      (prev, current) => prev + parseInt(discountItemsPriceList[current]),
+      0
+    );
+  console.log(getTotalDiscountPrice);
   return (
     <FooterContainer>
       {(() => {
         switch (currencyCode) {
           case CODE.KRW:
-            return `합계: ${totalPrice}원`;
+            return `합계: ${totalPrice - getTotalDiscountPrice}원`;
           case CODE.USD:
-            return `Total: $${Math.floor(totalPrice / exchangeRate)}`;
+            return `Total: $${Math.floor(
+              (totalPrice - getTotalDiscountPrice) / exchangeRate
+            )}`;
           default:
-            return `합계: ${totalPrice}원`;
+            return `합계: ${totalPrice - getTotalDiscountPrice}원`;
         }
       })()}
       <FooterButton name={BUTTON_NAME.NEXT} />

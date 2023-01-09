@@ -31,14 +31,8 @@ function CartBody() {
     );
 
   useEffect(() => {
-    setTotalPrice(getTotalPrice - getTotalDiscountPrice);
-  }, [
-    selectionItems,
-    itemsCounts,
-    getTotalPrice,
-    setTotalPrice,
-    getTotalDiscountPrice,
-  ]);
+    setTotalPrice(getTotalPrice);
+  }, [selectionItems, itemsCounts, getTotalPrice, setTotalPrice]);
 
   return (
     <BodyContainer>
