@@ -21,6 +21,7 @@ export interface State {
   getData: (url: string | undefined) => void;
   setSelectionItems: (payload: string[]) => void;
   setSelectionDiscounts: (payload: string[]) => void;
+  setDeleteItem: (id: string) => void;
 }
 export interface ButtonProps {
   name: string;

@@ -9,6 +9,7 @@ import useStore from "../libs/store/useStore";
 function CartItem({ id, name, price, count }: CartItemProps) {
   const [quantity, setQuantity] = useState(count);
   const SetItemsCounts = useStore((state) => state.setItemsCounts);
+  const setDeleteItem = useStore((state) => state.setDeleteItem);
 
   const handleMinus = () => {
     if (quantity < 2) return;
@@ -22,6 +23,8 @@ function CartItem({ id, name, price, count }: CartItemProps) {
     SetItemsCounts(id, quantity);
   }, [quantity, id, SetItemsCounts]);
 
+  const handleDelete = () => setDeleteItem(id);
+
   return (
     <li>
       <div>
@@ -32,7 +35,7 @@ function CartItem({ id, name, price, count }: CartItemProps) {
         <AiOutlineMinusSquare onClick={handleMinus} />
         <span>{quantity}</span>
         <AiOutlinePlusSquare onClick={handlePlus} />
-        <RiDeleteBin5Fill />
+        <RiDeleteBin5Fill onClick={handleDelete} />
       </div>
     </li>
   );

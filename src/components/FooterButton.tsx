@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import useStore from "../libs/store/useStore";
 import { ButtonProps } from "../types";
 
 function FooterButton({ name, onClick }: ButtonProps) {
-  const totalPrice = useStore((state) => state.totalPrice);
   return <ButtonContainer onClick={onClick}>{name}</ButtonContainer>;
 }
 

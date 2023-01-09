@@ -39,6 +39,10 @@ const useStore = create<State>((set) => ({
         [id]: count,
       },
     })),
+  setDeleteItem: (id) =>
+    set((state) => ({
+      selectionItems: state.selectionItems.filter((item) => item !== id),
+    })),
 }));
 
 export default useStore;
