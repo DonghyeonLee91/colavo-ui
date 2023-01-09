@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { ButtonProps } from "../types";
 
-function FooterButton({ name }: ButtonProps) {
-  return <ButtonContainer>{name}</ButtonContainer>;
+function FooterButton({ name, onClick }: ButtonProps) {
+  return <ButtonContainer onClick={onClick}>{name}</ButtonContainer>;
 }
 
 const ButtonContainer = styled.button`

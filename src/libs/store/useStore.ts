@@ -4,6 +4,8 @@ import { State } from "../../types";
 const useStore = create<State>((set) => ({
   items: {},
   discounts: {},
+  selectionItems: [],
+  selectionDiscounts: [],
   currency_code: null,
   getData: async (url) => {
     if (typeof url === "string") {
@@ -16,6 +18,14 @@ const useStore = create<State>((set) => ({
       }));
     }
   },
+  setSelectionItems: (payload) =>
+    set(() => ({
+      selectionItems: payload,
+    })),
+  setSelectionDiscounts: (payload) =>
+    set(() => ({
+      selectionDiscounts: payload,
+    })),
 }));
 
 export default useStore;

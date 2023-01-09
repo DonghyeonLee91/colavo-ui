@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import useStore from "../libs/store/useStore";
@@ -9,7 +9,9 @@ import SelectionHeader from "../components/SelectionHeader";
 
 function ItemSelectionPage() {
   const items = useStore((state) => state.items);
+  const setSelectionItems = useStore((state) => state.setSelectionItems);
   const [checkedArr, setCheckedArr] = useState<CheckBox>([]);
+  const [isCompleted, setISCompleted] = useState(false);
   const handleChange = (checked: boolean, id: string) => {
     if (checked) {
       setCheckedArr([...checkedArr, id]);
@@ -17,12 +19,21 @@ function ItemSelectionPage() {
       setCheckedArr(checkedArr.filter((el) => el !== id));
     }
   };
+  const handleSubmit = () => {
+    setISCompleted(true);
+  };
+
+  useEffect(() => {
+    if (isCompleted) {
+      setSelectionItems(checkedArr);
+    }
+  }, [isCompleted]);
 
   return (
     <ItemSelectionContainer>
       <SelectionHeader />
       <SelectionBody data={items} onChange={handleChange} />
-      <SelectionFooter />
+      <SelectionFooter onSubmit={handleSubmit} />
     </ItemSelectionContainer>
   );
 }

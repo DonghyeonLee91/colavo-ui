@@ -5,11 +5,12 @@ import GlobalStyle from "./GlobalStyle";
 import CONFIG from "./libs/config/config";
 import useStore from "./libs/store/useStore";
 import DiscountSelectionPage from "./pages/DiscountSelectionPage";
+import ItemSelectionPage from "./pages/ItemSelectionPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DiscountSelectionPage />,
+    element: <ItemSelectionPage />,
     errorElement: <p>Not Found!</p>,
   },
 ]);
