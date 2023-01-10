@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# 콜라보그라운드 UI 개발 과제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://user-images.githubusercontent.com/101446818/211433364-789c1d66-cf4b-4b38-b0d6-e6b8f0b00182.gif" width="400" height="400">
 
-## Available Scripts
+## 기능
 
-In the project directory, you can run:
+- [x] item, discount는 각각 장바구니로 추가/삭제 가능
+- [x] 동일한 아이템을 장바구니로 담을 수 없음
+- [x] discount의 할인 대상 item을 선택하지 않으면 장바구니에 담긴 모든 item을 할인 적용
+- [x] discount의 할인 대상 item을 선택한 경우 선택한 항목만 할인 적용
+- [x] 장바구니에 담긴 내용이 변경될 때 마다 사용자에게 최종 금액을 표시
+- [x] 최종 금액은 currency_code에 따라 표시(환율의 경우 하나은행 API를 이용하여 기준환율을 적용하였습니다.)
 
-### `npm start`
+## 설치 및 실행
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm install
+npm start
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+.env
+REACT_APP_DATA_API=
+REACT_APP_EXCHANGE_RATE_API=
+```
 
-### `npm test`
+## 회고
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+이번 과제를 하면서 타입스크립트를 학습하고 바로 과제 적용을 해봤는데,  
+ 우선 생각보다 까다롭다는 생각이 들었습니다. 타입설정에 따라 경고가 뜨는 경우가 있다보니, 이러한 부분을 해결하기 위해 시간 소모가 생각보다 많았는데요  
+ 자바스크립트에 비해 상당히 제약이 많아진 느낌이지만, 오히려 깐깐한 타입스크립트가 저는 더 마음에 들었습니다.  
+ 더 엄격하게 검사를 하기 때문에 놓치거나, 실수한 부분도 바로 캐치할 수 있었고, 이러한 오류를 줄여주는 점이 매력적이었습니다.  
+ 이번 과제를 통해 타입스크립트의 매력을 느낄 수 있었던 기회였습니다.  
+ 타입확장 및 제너릭을 이용하면 더 깔끔한 코드를 만들 수 있을 거같아 이번 과제에서 부족함을 느낀점 위주로 앞으로도 계속 학습할 계획입니다.  
+ 다소 아쉬운 점은 금요일부터 과제를 진행할 예정이었는데 컨디션 불량으로 인해 월요일부터 시작해서, 기능구현에 집중하다보니 디테일적으로 많이 부족했습니다.  
+ 컨디션 관리에 실패하다보니, 정작 중요한 과제에 집중하지 못한 점이 아쉬울 따름입니다.  
+ 끝으로 과제 기회를 주신 콜라보그라운드에 감사의 말씀을 드리고 싶습니다. 이번 경험도 소중히 생각하면서 더욱 정진하도록 하겠습니다.
