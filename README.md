@@ -1,7 +1,5 @@
 # 콜라보그라운드 UI 개발 과제
 
-<img src="https://user-images.githubusercontent.com/101446818/211433364-789c1d66-cf4b-4b38-b0d6-e6b8f0b00182.gif" width="400" height="400">
-
 ## 기능
 
 - [x] item, discount는 각각 장바구니로 추가/삭제 가능
